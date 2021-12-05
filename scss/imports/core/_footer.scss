@@ -1,0 +1,71 @@
+// css footer
+footer {
+    background-color: $bg-cl;
+    padding-top: 70px;
+    .logo-footer {
+        text-align: center;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 36px;
+        margin-bottom: 50px;
+        img {
+        //    width: 90px;
+        }
+        &::before,
+        &::after {
+            content: "";
+            height: 1px;
+            width: 100%;
+            background-color: #665d49;
+        }
+    }
+    .footer-info {
+        text-align: center;
+        p {
+            @include text(1.1rem, Arial, 2.6rem, $white-cl, uppercase);
+        }
+    }
+    .backtotop {
+        writing-mode: vertical-rl;
+        margin-left: auto;
+        @include text(1rem, Arial, 2rem, #aaaaaa, uppercase);
+        letter-spacing: 0.2em;
+        position: relative;
+        margin-top: 26px;
+        cursor: pointer;
+        transition: $t;
+        padding-bottom: 40px;
+        &::before {
+            content: "";
+            width: 1px;
+            height: 130px;
+            position: absolute;
+            top: -152px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #665d49;
+            transition: $t;
+        }
+        &:hover::before {
+            top: -170px;
+        }
+        &:hover {
+            color: $white-cl;
+        }
+    }
+
+    @include xs {
+        .footer-info {
+            p {
+                @include text(1.4rem, Arial, 3.2rem, $white-cl, uppercase);
+            }
+        }
+        .backtotop {
+            margin-top: 150px;
+            @include text(1.4rem, Arial, 2rem, #aaaaaa, uppercase);
+            letter-spacing: 0.2em;
+        }
+    }
+}
